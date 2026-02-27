@@ -13,7 +13,13 @@ content:
       - { name: title, label: Title, type: string, required: true }
       - { name: description, label: Description, type: string }
       - { name: coverImage, label: Cover image, type: image }
-      - { name: date, label: Date, type: date, options: { time: true, format: "yyyy-MM-dd'" } }
+      - { name: date, label: Date, type: date, required: true, options: { time: true, format: "yyyy-MM-dd'" } }
+      - name: tag
+        label: Tag
+        type: select
+        options:
+          multiple: true
+          values: [ Tech, News, Sports ]
       - name: author
         label: Author
         type: object
@@ -26,3 +32,4 @@ content:
         fields:
           - { name: url, label: URL, type: image }
       - { name: body, label: Body, type: rich-text }
+ 
