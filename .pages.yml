@@ -25,4 +25,4 @@ content:
         type: object
         fields:
           - { name: url, label: URL, type: image }
-          - { name: body, label: Body, type: rich-text }
+        - { name: body, label: Body, type: rich-text }
