@@ -6,6 +6,7 @@ type Metadata = {
   date: string
   summary: string
   image?: string
+  coverImage: string
 }
 
 function parseFrontmatter(fileContent: string) {

@@ -1,5 +1,5 @@
 media:
-  input: app/blog/assets
+  input: public/assets
   output: /assets
   categories: [ "image" ]
 content:

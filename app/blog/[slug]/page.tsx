@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
+import Image from 'next/image'
+import coverImage from '../assets/Snipaste_2026-02-27_22-07-37.jpg'
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -56,22 +58,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-// export default function Blog({ params }) {
-//    let post = getBlogPosts().find((post) => post.slug === params.slug)
-//    console.log(params.slug)
 
-
-//   if (!post) {
-//     notFound()
-//   }
 export default async function Blog({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params  // ← обязательно await!
   
   let post = getBlogPosts().find((post) => post.slug === slug)
-  
+
   if (!post) {
     notFound()
   }
+
+     console.log("111233", post.metadata.coverImage)
 
   return (
     <section>
@@ -97,6 +94,14 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           }),
         }}
       />
+      <Image
+       src={post.metadata.coverImage}
+    //src={coverImage}
+      alt={post.metadata.title}
+      width={500}
+      height={300}
+    />
+    
       <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.metadata.title}
       </h1>
