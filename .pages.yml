@@ -19,7 +19,7 @@ content:
         type: select
         options:
           multiple: true
-          values: [ Tech, News, Sports ]
+          values: [ Запросы, СКД, Формы ]
       - name: author
         label: Author
         type: object
