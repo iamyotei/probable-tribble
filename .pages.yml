@@ -14,6 +14,9 @@ content:
       - { name: description, label: Description, type: string, required: true }
       - { name: coverImage, label: Cover image, type: image }
       - { name: date, label: Date, type: date, options: { time: true, format: "yyyy-MM-dd'" }, required: true }
+      - name: attachment
+        label: Attachment
+        type: file
       - name: tag
         label: Tag
         type: select
